@@ -48,7 +48,7 @@ def radians():
     return angle
     
 pi=np.pi
-def destroy_all_buttons():
+def destroy_all_buttons():#removes all the extra buttons and except the buttons which are present at begining 
     global button_Close
     buttons=[button_arcsin, button_arccos, button_arctan,button_hypsin,button_hypcos,button_hyptan,button_invhypsin,button_invhypcos,button_invhyptan,button_back,button_Close,button_rad,button_openparenthesis,button_closeparenthesis,button_instruction
     ]
@@ -56,12 +56,12 @@ def destroy_all_buttons():
         button.destroy()
     destroy_button()
 
-def destroy_inverse_buttons():
+def destroy_inverse_buttons():#removes the inverse trignometric buttons
     buttons =[button_arcsin, button_arccos, button_arctan,button_hypsin,button_hypcos,button_hyptan,button_invhypsin,button_invhypcos,button_invhyptan,button_back,button_Close]
     for button in buttons:
         button.destroy()
     
-def open_inverse_buttons():
+def open_inverse_buttons():#opens the inverse trignometric functions
     global button_arcsin, button_arccos, button_arctan,button_hypsin,button_hypcos,button_hyptan,button_invhypsin,button_invhypcos,button_invhyptan,button_back,button_Close,button_rad
     button_arcsin=Button(root,text="sin^-1",command=lambda:operation("ARCSIN"),padx=1.5,pady=12.5,fg="orange",bg="black",borderwidth=6)
     button_arccos=Button(root,text="cos^-1",command=lambda:operation("ARCCOS"),padx=2.5,pady=12.5,fg="orange",bg="black",borderwidth=6)
@@ -87,7 +87,7 @@ def open_inverse_buttons():
     button_back.grid(row=4,column=0)
     button_Close.grid(row=3,column=0)
 
-def open_extra_buttons():
+def open_extra_buttons():#opens the trignometric and exponential buttons
     global button_sin,button_cos,button_tan,button_sqrt,button_sqr,button_X,button_log,button_inv,button_ln,button_invf,button_exp,button_factorial,button_close,button_openparenthesis,button_closeparenthesis,button_quit,button_instruction
     global button_rad,button_degree,button_length,button_Speed,button_area,button_Time,button_Temp,button_constant
     button_sin=Button(root,text="Sin",command=lambda:operation("SIN"),padx=14,pady=12.5,fg="orange",bg="black",borderwidth=6)
@@ -130,7 +130,7 @@ def open_extra_buttons():
     button_close.grid(row=3,column=0)
     button_rad.grid(row=3,column=1)
 
-def destroy_button():
+def destroy_button():#removes all the trignometric,exponential and other buttons
     buttons=[ button_sin,button_cos,button_tan,button_sqrt,button_sqr,button_X,button_log,button_inv,button_ln,button_invf,button_exp,button_factorial,button_close,
     button_rad,button_degree,button_openparenthesis,button_instruction,button_closeparenthesis]
     for button in buttons:
